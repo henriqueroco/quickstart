@@ -1,210 +1,210 @@
-WildFly Quickstarts
+JBoss Application Server Quickstarts
 ====================
-Summary: The quickstarts demonstrate Java EE 7 and a few additional technologies from the JBoss stack. They provide small, specific, working examples that can be used as a reference for your own project.  
+Resumo: Os quickstarts demonstrar Java EE 7 e algumas tecnologias adicionais da pilha JBoss. Eles fornecem exemplos pequenos, específico, trabalho que podem ser usados como referência para seu próprio projeto.
 
-Introduction
+Introdução
 ---------------------
 
 
-These quickstarts run on JBoss WildFly. This version uses the correct dependencies and ensures you test and compile against your runtime environment.
+Estes quickstarts executado no JBoss JBoss Application Server. Esta versão utiliza as dependências corretas e garante que você testar e compilar contra seu ambiente de tempo de execução.
 
-Be sure to read this entire document before you attempt to work with the quickstarts. It contains the following information:
+Certifique-se de ler este documento inteiro antes de tentar trabalhar com os tutoriais. Ele contém as seguintes informações:
 
-* [Available Quickstarts](#available-quickstarts): List of the available quickstarts and details about each one.
+* [Disponível Quickstarts] (# disponíveis-quickstarts): Lista dos quickstarts disponíveis e detalhes sobre cada um.
 
-* [Suggested Approach to the Quickstarts](#suggested-approach-to-the-quickstarts): A suggested approach on how to work with the quickstarts.
+* [Sugerida Abordagem dos Quickstarts] (# sugeriu-abordagem-to-the-quickstarts): uma abordagem sugerida para a trabalhar com os tutoriais.
 
-* [System Requirements](#system-requirements): List of software required to run the quickstarts.
+* [Requerimentos do Sistema] (# system-requisitos): Lista de software necessário para executar os quickstarts.
 
-* [Configure Maven](#configure-maven): How to configure the Maven repository for use by the quickstarts.
+* [Configurar Maven] (# configure-maven): Como configurar o repositório Maven para uso pelos quickstarts.
 
-* [Run the Quickstarts](#run-the-quickstarts): General instructions for building, deploying, and running the quickstarts.
+* [Execute o Quickstarts] (# run-as-quickstarts): instruções gerais para criação, implantação e execução dos quickstarts.
 
-* [Run the Arquillian Tests](#run-the-arquillian-tests): How to run the Arquillian tests provided by some of the quickstarts.
+* [Executar os testes Arquillian] (# os Arquillian-testes-run-): Como executar os testes Arquillian fornecidos por alguns dos quickstarts.
 
-* [Optional Components](#optional-components): How to install and configure optional components required by some of the quickstarts.
+* [Componentes opcionais] (#-componentes opcionais): Como instalar e configurar componentes opcionais exigidas por alguns dos quickstarts.
 
 
-Available Quickstarts
+Quickstarts Disponível 
 ---------------------
 
-The following is a list of the currently available quickstarts. The table lists each quickstart name, the technologies it demonstrates, gives a brief description of the quickstart, and the level of experience required to set it up. For more detailed information about a quickstart, click on the quickstart name.
+O que se segue é uma lista dos quickstarts atualmente disponíveis. A tabela lista cada nome de início rápido, as tecnologias que demonstra, dá uma breve descrição do quickstart, eo nível de experiência necessário para configurá-lo. Para informações mais detalhadas sobre um início rápido, clique sobre o nome de início rápido.
 
-Some quickstarts are designed to enhance or extend other quickstarts. These are noted in the **Prerequisites** column. If a quickstart lists prerequisites, those must be installed or deployed before working with the quickstart.
+Alguns quickstarts são projetados para aumentar ou estender outros quickstarts. Estes são anotados nos Pré-requisitos ** ** coluna. Se um quickstart lista pré-requisitos, estes devem ser instalados ou implantados antes de trabalhar com o início rápido.
 
-Quickstarts with tutorials in the [Get Started Developing Applications](https://github.com/wildfly/quickstart/guide/Introduction/ "Get Started Developing Applications") are noted with two asterisks ( ** ) following the quickstart name.
+Quickstarts com tutoriais no [Comece a desenvolver Applications] (https://github.com/wildfly/quickstart/guide/Introduction/ "começar a desenvolver aplicativos") estão marcados com dois asteriscos (**) que seguem o nome de início rápido.
 
 [TOC-quickstart]
 
-Suggested Approach to the Quickstarts
+Abordagem sugeriu aos Quickstarts
 --------------------------------------
 
-We suggest you approach the quickstarts as follows:
+Sugerimos que você se aproximar dos quickstarts da seguinte forma:
 
-* Regardless of your level of expertise, we suggest you start with the **helloworld** quickstart. It is the simplest example and is an easy way to prove your server is configured and started correctly.
-* If you are a beginner or new to JBoss, start with the quickstarts labeled **Beginner**, then try those marked as **Intermediate**. When you are comfortable with those, move on to the **Advanced** quickstarts.
-* Some quickstarts are based upon other quickstarts but have expanded capabilities and functionality. If a prerequisite quickstart is listed, be sure to deploy and test it before looking at the expanded version.
+* Independentemente do seu nível de especialização, sugerimos que você comece com o ** ** helloworld quickstart. É o exemplo mais simples e é uma maneira fácil de provar o seu servidor está configurado e iniciado corretamente.
+* Se você é um novato ou novo para JBoss, comece com as quickstarts marcados ** ** novato, então tente aqueles marcados como ** ** Intermediário. Quando você está confortável com isso, passar para os ** ** quickstarts avançadas.
+* Alguns quickstarts são baseadas em outros quickstarts mas têm expandido as capacidades e funcionalidades. Se um quickstart pré-requisito está listado, certifique-se de instalar e testá-lo antes de olhar para a versão expandida.
 
 
-System Requirements
+Requerimentos do Sistema
 -------------
 
-To run these quickstarts with the provided build scripts, you need the following:
+Para executar esses quickstarts com os scripts de construção fornecidos, é necessário o seguinte:
 
-1. Java 1.7, to run WildFly and Maven. You can choose from the following:
+1. Java 1.7, para executar JBoss Application Server e Maven. Você pode escolher entre as seguintes opções:
     * OpenJDK
     * Oracle Java SE
 
-2. Maven 3.1.0 or newer, to build and deploy the examples
-    * If you have not yet installed Maven, see the [Maven Getting Started Guide](http://maven.apache.org/guides/getting-started/index.html) for details.
-    * If you have installed Maven, you can check the version by typing the following in a command line:
+2. Maven 3.1.0 ou mais recente, para construir e implantar os exemplos
+     [Guia Maven Introdução] * Se você ainda não instalou o Maven, consulte o (http://maven.apache.org/guides/getting-started/index.html) para mais detalhes.
+     * Se você tiver instalado o Maven, você pode verificar a versão ao escrever o seguinte em uma linha de comando:
 
             mvn --version 
 
-3. The JBoss WildFly distribution ZIP.
-    * For information on how to install and run JBoss, refer to the product documentation.
+3. A distribuição ZIP JBoss JBoss Application Server.
+* Para informações sobre como instalar e executar o JBoss, consulte a documentação do produto.
 
-4. You can also use [JBoss Developer Studio or Eclipse](#use-jboss-developer-studio-or-eclipse-to-run-the-quickstarts) to run the quickstarts. 
+4. Você também pode usar [JBoss Developer Studio ou Eclipse] (# use-jboss-desenvolvedor-studio-ou-eclipse-to-run-as-quickstarts) para executar os quickstarts.
 
 
-Configure Maven
+Configuração do Maven
 -------------
 
-### Configure Maven for JBoss WildFly
+### Configurar Maven para JBoss JBoss Application Server
 
-If you are using the JBoss WildFly Quickstart distribution, the community artifacts are available in the Maven central repository so no additional configuration is needed.
+Se você estiver usando a distribuição JBoss JBoss Application Server de início rápido, os artefatos da comunidade estão disponíveis no repositório central Maven então nenhuma configuração adicional é necessária.
 
-### Maven Profiles
+### Perfis Maven.
 
-Profiles are used by Maven to customize the build environment. The `pom.xml` in the root of the quickstart directory defines the following profiles:
+Os perfis são usados ​​pelo Maven para personalizar o ambiente de compilação. O `pom.xml` na raiz do diretório quickstart define os seguintes perfis:
 
-* The `default` profile defines the list of modules or quickstarts that require nothing but JBoss Enterprise Application Platform or WildFly .
-* The `requires-postgres` profile lists the quickstarts that require PostgreSQL to be running when the quickstart is deployed.
-* The `complex-dependency` profile lists quickstarts that require manual configuration that can not be automated.
-* The `requires-full` profile lists quickstarts the require you start the server using the full profile.
-* The `requires-xts` profile lists quickstarts the require you start the server using the xts profile.
-* The `non-maven` profile lists quickstarts that do not require Maven, for example, quickstarts that depend on deployment of other quickstarts or those that use other Frameworks such as Forge.
+* O `default` perfil define a lista de módulos ou quickstarts que exigem nada além de JBoss Enterprise Application Platform ou JBoss Application Server.
+* O `exige-postgres` perfil lista os quickstarts que exigem PostgreSQL para ser executado quando o quickstart é implantado.
+* Os `complexo dependency` listas de perfil quickstarts que requerem configuração manual que não pode ser automatizado.
+* O `exige-full` listas de perfil Quickstarts a exigir que você iniciar o servidor usando o perfil completo.
+* O `exige-xts` listas de perfil Quickstarts a exigir que você iniciar o servidor usando o perfil xts.
+* Os `listas de perfil não-maven` Quickstarts que não exigem Maven, por exemplo, tutoriais que dependem de implantação de outros quickstarts ou aqueles que usam outras estruturas, como Forge.
 
 
-Run the Quickstarts
+Execute os Quickstarts
 -------------------
 
-The root folder of each individual quickstart contains a README file with specific details on how to build and run the example. In most cases you do the following:
+A pasta raiz de cada indivíduo quickstart contém um arquivo README com detalhes específicos sobre como criar e executar o exemplo. Na maioria dos casos você faça o seguinte:
 
-* [Start the JBoss WildFly Server](#start-the-jboss-wildfly-server)
-* [Build and deploy the quickstart](#build-and-deploy-the quickstart)
+* [Comece o JBoss JBoss Application Server Servidor] (# inicia-the-jboss-JBoss Application Server-server)
+* [Criar e implantar o quickstart] (# build-e-deploy-o quickstart)
 
 
-### Start the JBoss WildFly Server
+### Iniciar o Servidor JBoss JBoss Application Server
 
-Before you deploy a quickstart, in most cases you need a running server. A few of the Arquillian tests do not require a running server. This will be noted in the README for that quickstart. 
+Antes de implantar um início rápido, na maioria dos casos você precisa de um servidor em execução. Alguns dos testes Arquillian não necessitam de um servidor em execução. Isto será observado no README para que quickstart.
 
-The JBoss server can be started a few different ways.
+O servidor JBoss pode ser iniciado algumas maneiras diferentes.
 
-* [Start the JBoss Server With the _web_ profile](#start-jboss-wildfly-with-the-web-profile): This is the default configuration. It defines minimal subsystems and services.
-* [Start the JBoss Server with the _full_ profile](#start-jboss-wildfly-with-the-full-profile): This profile configures many of the commonly used subsystems and services.
-* [Start the JBoss Server with a custom configuration](#start-jboss-wildfly-with-custom-configuration-options): Custom configuration parameters can be specified on the command line when starting the server.    
+* [Iniciar o Servidor JBoss Com o perfil _web_] (# start-jboss-JBoss Application Server-com-o-web-perfil): Esta é a configuração padrão. Ele define os subsistemas e os serviços mínimos.
+* [Iniciar o Servidor JBoss com o perfil _full_] (# start-jboss-JBoss Application Server-com-o full-profile-): Este perfil configura muitos dos subsistemas e serviços mais usados.
+* [Iniciar o Servidor JBoss com uma configuração personalizada] (# start-jboss-JBoss Application Server-com-custom-configuração de opções): parâmetros de configuração personalizadas podem ser especificada na linha de comando ao iniciar o servidor.
 
-The README for each quickstart will specify which configuration is required to run the example.
+O README para cada quickstart irá especificar qual configuração é necessária para executar o exemplo.
 
-#### Start JBoss WildFly with the Web Profile
+#### Inicie o JBoss JBoss Application Server com o perfil Web
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the web profile:
+1. Abra uma linha de comando e navegue até o diretório raiz do servidor JBoss.
+2. O seguinte mostra a linha de comando para iniciar o servidor com o perfil web:
 
         For Linux:   JBOSS_HOME/bin/standalone.sh
         For Windows: JBOSS_HOME\bin\standalone.bat
 
-#### Start JBoss WildFly with the Full Profile
+#### Inicie o JBoss JBoss Application Server com o perfil completo
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the full profile:
+1. Abra uma linha de comando e navegue até o diretório raiz do servidor JBoss.
+2. O seguinte mostra a linha de comando para iniciar o servidor com o perfil completo:
 
         For Linux:   JBOSS_HOME/bin/standalone.sh -c standalone-full.xml
         For Windows: JBOSS_HOME\bin\standalone.bat -c standalone-full.xml
 
-#### Start JBoss WildFly with Custom Configuration Options
+#### Inicie o JBoss JBoss Application Server com opções de configuração personalizadas
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server. Replace the CUSTOM_OPTIONS with the custom optional parameters specified in the quickstart.
+1. Abra uma linha de comando e navegue até o diretório raiz do servidor JBoss.
+2. O seguinte mostra a linha de comando para iniciar o servidor. Substitua as opções personalizadas com os parâmetros costume opcionais especificadas no início rápido.
 
         For Linux:   JBOSS_HOME/bin/standalone.sh CUSTOM_OPTIONS
         For Windows: JBOSS_HOME\bin\standalone.bat CUSTOM_OPTIONS
            
-### Build and Deploy the Quickstarts
+### Construir e implantar o Quickstarts
 
-See the README file in each individual quickstart folder for specific details and information on how to run and access the example.
+Consulte o arquivo LEIA-ME em cada pasta quickstart individual para detalhes e informações específicas sobre como executar e acessar o exemplo.
 
-#### Build the Quickstart Archive
+#### Construir o Arquivo Início rápido
 
-In some cases, you may want to build the application to test for compile errors or view the contents of the archive. 
+Em alguns casos, você pode querer criar o aplicativo para testar erros de compilação ou visualizar o conteúdo do arquivo.
 
-1. Open a command line and navigate to the root directory of the quickstart you want to build.
-2. Use this command if you only want to build the archive, but not deploy it:
+1. Abra uma linha de comando e navegue até o diretório raiz do quickstart você quer construir.
+2. Use este comando se você só quer construir o arquivo, mas não implantá-lo:
 
             mvn clean package
 
-#### Build and Deploy the Quickstart Archive
+#### Construir e implantar o Arquivo Início rápido
 
-1. Make sure you [start the JBoss Server](#start-the-jboss-wildfly-server) as described in the README.
-2. Open a command line and navigate to the root directory of the quickstart you want to run.
-3. Use this command to build and deploy the archive:
+1. Certifique-se que você [iniciar o JBoss servidor] (# start-the-jboss-JBoss Application Server em servidor), como descrito no README.
+2. Abra uma linha de comando e navegue até o diretório raiz do quickstart você deseja executar.
+3. Utilize este comando para criar e implantar o arquivo:
 
             mvn clean package wildfly:deploy
 
-#### Undeploy an Archive
+#### Undeploy um Arquivo
 
-The command to undeploy the quickstart is simply: 
+O comando para desimplantar o início rápido é simplesmente:
 
         mvn wildfly:undeploy
  
-### Verify the Quickstarts Build with One Command
+### Verifique as Quickstarts Construa com um comando
 -------------------------
 
-You can verify the quickstarts build using one command. However, quickstarts that have complex dependencies must be skipped. For example, the _jax-rs-client_ quickstart is a RESTEasy client that depends on the deployment of the _helloworld-rs_ quickstart. As noted above, the root `pom.xml` file defines a `complex-dependencies` profile to exclude these quickstarts from the root build process. 
+Você pode verificar as quickstarts construir usando um comando. No entanto, quickstarts que têm dependências complexas devem ser ignorados. Por exemplo, o início rápido _jax-rs-client_ é um cliente RESTEasy que depende da implantação do quickstart _helloworld-rs_. Como observado acima, o arquivo de raiz `define uma pom.xml` `complex-dependencies` perfil para excluir esses quickstarts do processo de construção de raiz.
 
-To build the quickstarts:
+Para construir os quickstarts:
 
-1. Do not start the server.
-2. Open a command line and navigate to the root directory of the quickstarts.
-3. Use this command to build the quickstarts that do not have complex dependencies:
+1. Não iniciar o servidor.
+2. Abra uma linha de comando e navegue até o diretório raiz dos quickstarts.
+3. Utilize este comando para construir as quickstarts que não têm dependências complexas:
 
             mvn clean install '-Pdefault,!complex-dependencies'
 
 
-### Undeploy the Deployed Quickstarts with One Command
+### Undeploy os Quickstarts implantado com um comando
 -------------------------
 
-To undeploy the quickstarts from the root of the quickstart folder, you must pass the argument `-fae` (fail at end) on the command line. This allows the command to continue past quickstarts that fail due to complex dependencies and quickstarts that only have Arquillian tests and do not deploy archives to the server.
+Para desimplantar o quickstarts a partir da raiz da pasta de início rápido, você deve passar o argumento `-fae` (falha no final) na linha de comando. Isso permite que o comando para continuar quickstarts últimos que falham devido a dependências complexas e quickstarts que só têm testes Arquillian e não implantar arquivos para o servidor.
 
-You can undeploy quickstarts using the following procedure:
+Você pode undeploy quickstarts usando o seguinte procedimento:
 
-1. Start the server.
-2. Open a command line and navigate to the root directory of the quickstarts.
-3. Use this command to undeploy any deployed quickstarts:
+1. Inicie o servidor.
+2. Abra uma linha de comando e navegue até o diretório raiz dos quickstarts.
+3. Utilize este comando para undeploy quaisquer quickstarts implantados:
 
             mvn wildfly:undeploy -fae
 
-To undeploy any quickstarts that fail due to complex dependencies, follow the undeploy procedure described in the quickstart's README file.
+Para undeploy quaisquer quickstarts que falham devido a dependências complexas, siga o procedimento descrito no undeploy arquivo LEIA-ME do quickstart.
 
 
-### Run the Arquillian Tests
+### Execute os testes Arquillian
 -------------------------
 
-Some of the quickstarts provide Arquillian tests. By default, these tests are configured to be skipped, as Arquillian tests require the use of a container. 
+Alguns dos quickstarts fornecer testes Arquillian. Por padrão, esses ensaios são configurados para ser omitido, como Arquillian testes requerem a utilização de um recipiente.
 
-You can run these tests using either a remote or managed container. The quickstart README should tell you what you should expect to see in the console output and server log when you run the test.
+Você pode executar esses testes utilizando quer um controle remoto ou recipiente gerenciado. A README quickstart deve dizer-lhe o que você deve esperar para ver no registo de saída e servidor do console quando você executar o teste.
 
-1. Test the quickstart on a Remote Server
-    * A remote container requires you start the JBoss WildFly server before running the test. [Start the JBoss Server](#start-the-jboss-wildfly-server) as described in the quickstart README file.
-    * Run the test goal with the following profile activated:
+1. Teste o início rápido em um servidor remoto
+     * Um recipiente remoto exige que você iniciar o servidor JBoss JBoss Application Server antes de executar o teste. [Comece o JBoss servidor] (# inicia-the-jboss-JBoss Application Server em servidor), como descrito no arquivo quickstart README.
+     * Execute o objectivo de teste com o seguinte perfil activado:
 
             mvn clean test -Parq-wildfly-remote
-2. Test the quickstart on Managed Server
+2. Teste o QuickStart no Servidor Gerenciado
 
-    _Note: This test requires that your server is not running. Arquillian will start the container for you, however, you must first let it know where to find the remote JBoss container._
-    * Open the test/resources/arquillian.xml file located in the quickstart directory. 
-    * Find the configuration for the remote JBoss container. It should look like this:
+     _Observação: Este teste requer que o servidor não está em execução. Arquillian irá iniciar o recipiente para você, no entanto, você deve primeiro deixá-lo saber onde encontrar o container._ JBoss remoto
+     * Abra o arquivo de recursos de teste / / arquillian.xml localizado no diretório quickstart.
+     * Encontrar a configuração para o recipiente JBoss remoto. Deve olhar como este:
 
             <!-- Example configuration for a remote WildFly instance -->
             <container qualifier="jboss" default="true">
@@ -227,19 +227,19 @@ You can run these tests using either a remote or managed container. The quicksta
 
             mvn clean test -Parq-wildfly-managed
 
-Use JBoss Developer Studio or Eclipse to Run the Quickstarts
+Use JBoss Developer Studio ou Eclipse para executar o Quickstarts
 -------------------------------------
 
-You can also deploy the quickstarts from Eclipse using JBoss tools. For more information on how to set up Maven and the JBoss tools, refer to the [JBoss Enterprise Application Platform 6 Development Guide](https://access.redhat.com/knowledge/docs/JBoss_Enterprise_Application_Platform/) or [Get Started Developing Applications](https://github.com/wildfly/quickstart/guide/Introduction/ "Get Started Developing Applications").
+Você também pode implantar as quickstarts de Eclipse usando ferramentas JBoss. Para mais informações sobre como configurar Maven e as ferramentas JBoss, consulte [JBoss Enterprise Application Platform 6 Guia do Desenvolvimento] a (https://access.redhat.com/knowledge/docs/JBoss_Enterprise_Application_Platform/) ou [Get Started Desenvolvendo Aplicações ] (https://github.com/wildfly/quickstart/guide/Introduction/ "Get Started Desenvolvendo Aplicativos").
 
 
-Optional Components
+Componentes opcionais
 -------------------
-The following components are needed for only a small subset of the quickstarts. Do not install or configure them unless the quickstart requires it.
+Os seguintes componentes são necessários para apenas um pequeno subconjunto dos quickstarts. Não instale ou configurá-los a menos que o quickstart exige.
 
-* [Create Users Required by the Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CREATE_USERS.md#create-users-required-by-the-quickstarts): Add a Management or Application user for the quickstarts that run in a secured mode.
+* [Crie usuários requeridos pela Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CREATE_USERS.md#create-users-required-by-the-quickstarts): Adicionar um usuário ou Gerenciamento de Aplicativos para o tutoriais que são executados em um modo seguro.
 
-* [Configure the PostgreSQL Database for Use with the Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_POSTGRESQL.md#configure-the-postgresql-database-for-use-with-the-quickstarts): The PostgreSQL database is used for the distributed transaction quickstarts.
+* [Configure o banco de dados PostgreSQL para uso com o Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_POSTGRESQL.md#configure-the-postgresql-database-for-use-with-the-quickstarts): O banco de dados PostgreSQL é usado para os quickstarts transação distribuída.
 
-* [Configure Byteman for Use with the Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_BYTEMAN.md#configure-byteman-for-use-with-the-quickstarts): This tool is used to demonstrate crash recovery for distributed transaction quickstarts.
+* [Configurar Byteman para uso com o Quickstarts](https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_BYTEMAN.md#configure-byteman-for-use-with-the-quickstarts): Esta ferramenta é usada para demonstrar a recuperação de falhas para quickstarts transação distribuída.
 

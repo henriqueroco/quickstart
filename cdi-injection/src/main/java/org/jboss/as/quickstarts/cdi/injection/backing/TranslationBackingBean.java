@@ -24,9 +24,9 @@ import org.jboss.as.quickstarts.cdi.injection.qualifier.English;
 import org.jboss.as.quickstarts.cdi.injection.qualifier.Spanish;
 
 /**
- * Simple JSF backing bean, demonstrating CDI injection and qualifiers.
- *
- * Also note, this bean has a name different than the default name.
+ * Simples bean JSF apoio, demonstrando injeção CDI e qualificadores.
+ *
+ * Observe também, este feijão tem um nome diferente do que o nome padrão.
  *
  * @author Jason Porter
  */
@@ -34,8 +34,8 @@ import org.jboss.as.quickstarts.cdi.injection.qualifier.Spanish;
 public class TranslationBackingBean {
 
     /*
-     * Both of these injections is of the same base type: TranslationService, however, CDI is using the qualifiers to help
-     * narrow which of the two implementations should be injected.
+     * Ambas as injecções são do mesmo tipo de base: translationservice, no entanto, é CDI utilizando os qualificadores para ajudar
+     * Limitar qual das duas implementações deve ser injectado 
      */
 
     @Inject

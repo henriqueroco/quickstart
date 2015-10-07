@@ -25,13 +25,13 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 
 /**
- * Qualifier used to help determine the intended injection object.
- *
- * Qualifiers are special annotations created in a CDI application. The {@link Qualifier} annotation specifies this as a CDI
- * qualifier, which is used during injection to narrow the intended type to be injected.
- *
- * This particular qualifier will be used to specify types which should be used for the Spanish language.
- *
+ * Qualificador utilizado para ajudar a determinar o objecto de injecção pretendido.
+  *
+  * Qualifiers são anotações especiais criados em uma aplicação CDI. A {link Qualifier} anotação especifica isso como um CDI
+  * Qualificador, o qual é usado durante a injecção para limitar o tipo destina-se a ser injectado.
+  *
+  * Este qualificador particular irá ser usado para especificar tipos que devem ser utilizados para o espanhol.
+  *
  * @author Jason Porter
  */
 @Qualifier

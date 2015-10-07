@@ -25,10 +25,10 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 
 /**
- * Qualifier used to help determine the intended injection object.
- *
- * This particular qualifier will be used to specify types which should be used for the English language.
- *
+ * Qualificador utilizado para ajudar a determinar o objecto de injecção pretendido.
+  *
+  * Este qualificador particular irá ser usado para especificar tipos que devem ser utilizados para o Inglês.
+  *
  * @author Jason Porter
  * @see Spanish
  */

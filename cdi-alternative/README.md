@@ -1,98 +1,98 @@
-cdi-alternative: Demostrates CDI Alternatives
-======================================================
-Author: Nevin Zhu  
-Level: Intermediate  
-Technologies: CDI, Servlet, JSP  
-Summary: Demonstrates the use of CDI Alternatives where the bean is selected during deployment    
-Target Project: WildFly
-Source: <https://github.com/wildfly/quickstart/>  
+cdi-alternativa: demostrates CDI Alternativas
+================================================== ====
+Autor: Nevin Zhu
+Nível: Intermediário
+Technologies: CDI, Servlet, JSP
+Resumo: Demonstra o uso de CDI Alternativas onde o feijão é selecionado durante a implantação
+Projeto Alvo: JBoss Application Server
+Fonte: <https://github.com/wildfly/quickstart/>
 
-What is it?
+O que é isso?
 -----------
 
-When more than one version of a bean is implemented for different purposes, the ability to switch between the versions during the development phase by injecting one qualifier or another is shown in this demo.
+Quando mais de uma versão de um bean é implementado para fins diferentes, a capacidade de alternar entre as versões durante a fase de desenvolvimento através da injeção de um qualifier ou outro é mostrado nesta demonstração.
 
-Instead of having to change the source code of the application, one can make the choice at deployment time by using alternatives.
+Em vez de ter de alterar o código fonte da aplicação, pode-se fazer a escolha no momento da implantação usando alternativas.
 
-Alternatives are commonly used for purposes like the following:
+Alternativas são comumente utilizados para fins como o seguinte:
 
-1. To handle client-specific business logic that is determined at runtime.
-2. To specify beans that are valid for a particular deployment scenario, for example, when country-specific sales tax laws require country-specific sales tax business logic.
-3. To create dummy or mock versions of beans to be used for testing.
+1. Para lidar com a lógica de negócios específicos do cliente que é determinado em tempo de execução.
+2. Para especificar feijão que são válidos para um cenário de implantação particular, por exemplo, quando as leis de impostos sobre vendas específicas de cada país exigem lógica de negócios de imposto sobre vendas específicas de cada país.
+3. Para criar versões fictícias ou simuladas de feijão para ser usado para o teste.
 
-Any java class which has a no-args constructor and is in an archive with a beans.xml is available for lookup and injection. 
-For EL resolution, it must contain @Named
+Qualquer classe java que tem um construtor sem argumentos e está em um arquivo com uma beans.xml está disponível para consulta e injeção.
+Para a resolução EL, ele deve conterNamed
 
 
-System requirements
+Requerimentos do sistema
 -------------------
 
-All you need to build this project is Java 7.0 (Java SDK 1.7) or better, Maven 3.1 or better.
+Tudo que você precisa para construir este projeto é Java 7.0 (Java SDK 1.7) ou melhor, Maven 3.1 ou melhor.
 
-The application this project produces is designed to be run on JBoss WildFly.
+A aplicação deste projecto produz é projetado para ser executado em JBoss JBoss Application Server.
 
- 
+ 
 Configure Maven
 ---------------
 
-If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
+Se você ainda não tiver feito isso, você deve [Configurar Maven] (../ README.md # mavenconfiguration) antes de testar os quickstarts.
 
 
-Start JBoss WildFly
+Inicie o JBoss JBoss Application Server
 -------------------------
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the web profile:
+1. Abra uma linha de comando e navegue até o diretório raiz do servidor JBoss.
+2. O seguinte mostra a linha de comando para iniciar o servidor com o perfil web:
 
         For Linux:   JBOSS_HOME/bin/standalone.sh
         For Windows: JBOSS_HOME\bin\standalone.bat
 
 
-Build and Deploy the Quickstart
+Construir e implantar o Guia de início rápido
 -------------------------
 
-_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
+_Observação: A comando de compilação seguinte assume que você tenha configurado suas configurações de usuário Maven. Se você não tiver, você deve incluir Maven definir os argumentos na linha de comando. Veja [construir e implantar o Quickstarts] (../ README.md # buildanddeploy) para obter instruções completas e options._ adicional
 
-1. Make sure you have started the JBoss Server as described above.
-2. Open a command line and navigate to the root directory of this quickstart.
-3. Type this command to build and deploy the archive:
+1. Certifique-se de ter iniciado o servidor JBoss como descrito acima.
+2. Abra uma linha de comando e navegue até o diretório raiz do quickstart.
+3. Digite este comando para criar e implantar o arquivo:
 
         mvn clean package wildfly:deploy
         
-4. This will deploy `target/cdi-alternative.ear` to the running instance of the server.
+4.Isso implantará `target/cdi-alternative.ear` para a instância em execução do servidor.
 
 
-Access the application
+Acesse o aplicativo
 ---------------------
 
-The application will be running at the following URL <http://localhost:8080/cdi-alternative>.
+A aplicativo será executado na seguinte URL <http://localhost:8080/cdi-alternative>.
 
-You can specify alternative versions of the bean in the WEB-INF/beans.xml file by doing one of the following:
+Você pode especificar as versões alternativas do feijão no arquivo / beans.xml WEB-INF, efectuando um dos seguintes procedimentos:
 
-1. you can remove the '<alternatives>' tag
-2. you can change the class name.
+1. você pode remover a tag '<alternativas>'
+2. você pode alterar o nome da classe.
 
-In this quickstart, in order to switch back to the default implementation, 
-comment the '<alternatives>' block in the WEB-INF/beans.xml file and redeploy the quickstart.
+Neste início rápido, a fim de voltar para a implementação padrão,
+comentar o '<alternativas>' bloco no arquivo / beans.xml WEB-INF e reimplantar o início rápido.
 
-Undeploy the Archive
+Undeploy o Arquivo
 --------------------
 
-1. Make sure you have started the JBoss Server as described above.
-2. Open a command line and navigate to the root directory of this quickstart.
-3. When you are finished testing, type this command to undeploy the archive:
+1. Certifique-se de ter iniciado o servidor JBoss como descrito acima.
+2. Abra uma linha de comando e navegue até o diretório raiz do quickstart.
+3. Quando terminar o teste, digite este comando para undeploy o arquivo:
 
         mvn wildfly:undeploy
 
 
-Run the Quickstart in JBoss Developer Studio or Eclipse
+Execute o Guia de início rápido em JBoss Developer Studio ou Eclipse
 -------------------------------------
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse) 
+Você pode também iniciar o servidor e implantar os quickstarts de Eclipse usando ferramentas JBoss. Para obter mais informações, consulte [Utilizar JBoss Developer Studio ou Eclipse para executar o Quickstarts] (../ README.md # useeclipse)
 
-Debug the Application
+Depurar o aplicativo
 ------------------------------------
 
-If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.
+Se você quiser depurar o código-fonte ou olhar para os Javadocs de qualquer biblioteca do projeto, execute um dos seguintes comandos para puxá-los em seu repositório local. A IDE deve então detectá-los.
 
     mvn dependency:sources
     mvn dependency:resolve -Dclassifier=javadoc

@@ -39,14 +39,14 @@ public class Demo extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /*
-     * Attribute will be injected during run time. If beans.xml has alternative defined, then that class will be injected.
-     * Otherwise, the default is injected.
-     */
+      * Atributo será injetado durante a execução. Se beans.xml tem alternativa definido, então essa classe será injetado.
+      * Caso contrário, o padrão é injetado.
+      * /
     @Inject
     private Tax tax;
 
     /**
-     * handles the incoming servlet request
+     * servlet manipula a solicitação de entrada
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

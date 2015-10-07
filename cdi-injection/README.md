@@ -3,78 +3,77 @@ cdi-injection: Example Using CDI (Contexts and Dependency Injection)
 Author: Jason Porter  
 Level: Beginner  
 Technologies: CDI  
-Summary: Demonstrates the use of CDI 1.1 Injection and Qualifiers with JSF as the front-end client.  
+Summary: Demonstra o uso de CDI 1.1 injeção e qualificadores com JSF como o cliente de front-end. 
 Target Project: WildFly
 Source: <https://github.com/wildfly/quickstart/>  
 
-What is it?
+O que é isso?
 -----------
 
-This example demonstrates the use of *CDI 1.1 Injection and Qualifiers* in *JBoss WildFly* with JSF as the front-end client.
+Este exemplo demonstra o uso do CDI * 1.1 injeção e qualificadores * em * JBoss JBoss Application Server * com JSF como o cliente de front-end.
 
 
-System requirements
+Requerimentos do sistema
 -------------------
 
-All you need to build this project is Java 7.0 (Java SDK 1.7) or better, Maven 3.1 or better.
+Tudo que você precisa para construir este projeto é Java 7.0 (Java SDK 1.7) ou melhor, Maven 3.1 ou melhor.
 
-The application this project produces is designed to be run on JBoss WildFly.
+A aplicação deste projecto produz é projetado para ser executado em JBoss JBoss Application Server.
 
 Configure Maven
 ---------------
 
-If you have not yet done so, you must [Configure Maven](../README.md#mavenconfiguration) before testing the quickstarts.
+Se você ainda não tiver feito isso, você deve [Configurar Maven] (../ README.md # mavenconfiguration) antes de testar os quickstarts.
 
 
-Start JBoss WildFly with the Web Profile
+Inicie o JBoss JBoss Application Server com o perfil Web
 -------------------------
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the web profile:
+1. Abra uma linha de comando e navegue até o diretório raiz do servidor JBoss.
+2. O seguinte mostra a linha de comando para iniciar o servidor com o perfil web:
 
         For Linux:   JBOSS_HOME/bin/standalone.sh
         For Windows: JBOSS_HOME\bin\standalone.bat
 
  
-Build and Deploy the Quickstart
+Construir e implantar o Guia de início rápido
 -------------------------
 
-_NOTE: The following build command assumes you have configured your Maven user settings. If you have not, you must include Maven setting arguments on the command line. See [Build and Deploy the Quickstarts](../README.md#buildanddeploy) for complete instructions and additional options._
+_Observação: A comando de compilação seguinte assume que você tenha configurado suas configurações de usuário Maven. Se você não tiver, você deve incluir Maven definir os argumentos na linha de comando. Veja [construir e implantar o Quickstarts] (../ README.md # buildanddeploy) para obter instruções completas e options._ adicional
 
-1. Make sure you have started the JBoss Server as described above.
-2. Open a command line and navigate to the root directory of this quickstart.
-3. Type this command to build and deploy the archive:
+1. Certifique-se de ter iniciado o servidor JBoss como descrito acima.
+2. Abra uma linha de comando e navegue até o diretório raiz do quickstart.
+3. Digite este comando para criar e implantar o arquivo:
 
         mvn clean package wildfly:deploy
 
-4. This will deploy `target/wildfly-cdi-injection.war` to the running instance of the server.
+4. Isso implantará   `target/wildfly-cdi-injection.war` para a instância em execução do servidor.
 
 
-Access the application 
+Acesse o aplicativo
 ---------------------
 
-The application will be running at the following URL <http://localhost:8080/wildfly-cdi-injection/>.
+A aplicativo será executado na seguinte URL<http://localhost:8080/wildfly-cdi-injection/>.
 
 
-Undeploy the Archive
+Undeploy o Arquivo
 --------------------
 
-1. Make sure you have started the JBoss Server as described above.
-2. Open a command line and navigate to the root directory of this quickstart.
-3. When you are finished testing, type this command to undeploy the archive:
+1. Certifique-se de ter iniciado o servidor JBoss como descrito acima.
+2. Abra uma linha de comando e navegue até o diretório raiz do quickstart.
+3. Quando terminar o teste, digite este comando para undeploy o arquivo
 
         mvn wildfly:undeploy
 
 
-Run the Quickstart in JBoss Developer Studio or Eclipse
+Run Início Rápido no JBoss Developer Studio ou Eclipse
 -------------------------------------
-You can also start the server and deploy the quickstarts from Eclipse using JBoss tools. For more information, see [Use JBoss Developer Studio or Eclipse to Run the Quickstarts](../README.md#useeclipse) 
+Você pode também iniciar o servidor e implantar os quickstarts de Eclipse usando ferramentas JBoss. Para obter mais informações, consulte [Utilizar JBoss Developer Studio ou Eclipse para executar o Quickstarts] (../ README.md # useeclipse)
 
-
-Debug the Application
+Depurar o aplicativo
 ------------------------------------
 
-If you want to debug the source code or look at the Javadocs of any library in the project, run either of the following commands to pull them into your local repository. The IDE should then detect them.
+Se você quiser depurar o código-fonte ou olhar para os Javadocs de qualquer biblioteca do projeto, execute um dos seguintes comandos para puxá-los em seu repositório local. A IDE deve então detectá-los.
 
         mvn dependency:sources
         mvn dependency:resolve -Dclassifier=javadoc
